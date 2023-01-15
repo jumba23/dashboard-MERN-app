@@ -25,8 +25,11 @@ import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 
-/* CONFIGURATION */
+/* DATA IMPORTS */
+import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
 
+/* CONFIGURATION */
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -38,7 +41,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 /* ROUTES */
-
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
@@ -53,6 +55,10 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
+    console.log("Connected to MongoDB");
     app.listen(PORT, () => console.log(`Server Running at: ${PORT}`));
+    /* ONLY ADD DATA ONE TIME */
+
+    User.insertMany(dataUser);
   })
   .catch((error) => console.log(`${error} did not connect`));
