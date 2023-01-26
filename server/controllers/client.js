@@ -64,13 +64,10 @@ export const getTransactions = async (req, res) => {
       name: { $regex: search, $options: "i" },
     });
 
-    res.status(200).json(
-      {
-        transactions,
-        total,
-      },
-      {}
-    );
+    res.status(200).json({
+      transactions,
+      total,
+    });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
@@ -83,6 +80,7 @@ export const getGeography = async (req, res) => {
 
     const mappedLocations = users.reduce((acc, { country }) => {
       const countryISO3 = getCountryIso3(country);
+      console.log("countryISO3", countryISO3);
       if (!acc[countryISO3]) {
         acc[countryISO3] = 0;
       }
