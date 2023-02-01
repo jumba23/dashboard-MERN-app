@@ -25,7 +25,7 @@ const Geography = () => {
       >
         {data ? (
           <ResponsiveChoropleth
-            data={cleanData}
+            data={data}
             theme={{
               axis: {
                 domain: {

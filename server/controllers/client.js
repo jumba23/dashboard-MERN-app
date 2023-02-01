@@ -76,7 +76,6 @@ export const getTransactions = async (req, res) => {
 export const getGeography = async (req, res) => {
   try {
     const users = await User.find();
-    console.log("Server side - users", users);
 
     const mappedLocations = users.reduce((acc, { country }) => {
       const countryISO3 = getCountryIso3(country);
