@@ -13,7 +13,7 @@ const Geography = () => {
 
   if (data) cleanData = data.slice(3);
 
-  console.log("clean Data array", cleanData);
+  // console.log("clean Data array", cleanData);
 
   return (
     <Box m="1.5rem 2.5rem">
