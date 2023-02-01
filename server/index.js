@@ -35,7 +35,9 @@ import {
   dataProduct,
   dataProductStat,
   dataTransaction,
+  dataOverallStat,
 } from "./data/index.js";
+import OverallStat from "./models/OverallStat.js";
 
 /* CONFIGURATION */
 dotenv.config();
@@ -67,6 +69,7 @@ mongoose
     app.listen(PORT, () => console.log(`Server Running at: ${PORT}`));
     /* ONLY ADD DATA ONE TIME */
 
+    // OverallStat.insertMany(dataOverallStat);
     // User.insertMany(dataUser);
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
