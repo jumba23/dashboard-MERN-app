@@ -8,6 +8,7 @@ import { geoData } from "../../state/geoData";
 const Geography = () => {
   const theme = useTheme();
   const { data } = useGetGeographyQuery();
+
   let cleanData;
 
   if (data) cleanData = data.slice(3);
@@ -25,7 +26,7 @@ const Geography = () => {
       >
         {data ? (
           <ResponsiveChoropleth
-            data={data}
+            data={cleanData}
             theme={{
               axis: {
                 domain: {
@@ -36,6 +37,10 @@ const Geography = () => {
                 legend: {
                   text: {
                     fill: theme.palette.secondary[200],
+                  },
+                  border: {
+                    stroke: theme.palette.secondary[200],
+                    strokeWidth: 1,
                   },
                 },
                 ticks: {
@@ -72,11 +77,11 @@ const Geography = () => {
             borderColor="#ffffff"
             legends={[
               {
-                anchor: "bottom-right",
-                direction: "column",
+                anchor: "center",
+                direction: "row",
                 justify: true,
                 translateX: 0,
-                translateY: -125,
+                translateY: 0,
                 itemsSpacing: 0,
                 itemWidth: 94,
                 itemHeight: 18,

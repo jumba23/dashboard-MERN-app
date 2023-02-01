@@ -1,5 +1,5 @@
 export const geoData = {
-  type: "Features",
+  type: "FeatureCollection",
   features: [
     {
       type: "Feature",
