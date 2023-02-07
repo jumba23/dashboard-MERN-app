@@ -38,10 +38,6 @@ const Geography = () => {
                   text: {
                     fill: theme.palette.secondary[200],
                   },
-                  border: {
-                    stroke: theme.palette.secondary[200],
-                    strokeWidth: 1,
-                  },
                 },
                 ticks: {
                   line: {
@@ -77,11 +73,11 @@ const Geography = () => {
             borderColor="#ffffff"
             legends={[
               {
-                anchor: "center",
-                direction: "row",
+                anchor: "bottom-right",
+                direction: "column",
                 justify: true,
                 translateX: 0,
-                translateY: 0,
+                translateY: -125,
                 itemsSpacing: 0,
                 itemWidth: 94,
                 itemHeight: 18,
