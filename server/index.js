@@ -36,8 +36,10 @@ import {
   dataProductStat,
   dataTransaction,
   dataOverallStat,
+  dataAffiliateStat,
 } from "./data/index.js";
 import OverallStat from "./models/OverallStat.js";
+import AffiliateStat from "./models/AffiliateStat.js";
 
 /* CONFIGURATION */
 dotenv.config();
@@ -67,8 +69,10 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(PORT, () => console.log(`Server Running at: ${PORT}`));
+
     /* ONLY ADD DATA ONE TIME */
 
+    // AffiliateStat.insertMany(dataAffiliateStat);
     // OverallStat.insertMany(dataOverallStat);
     // User.insertMany(dataUser);
     // Product.insertMany(dataProduct);
