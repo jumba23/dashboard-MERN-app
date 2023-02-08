@@ -8,13 +8,13 @@ import { useState } from "react";
 const Overview = () => {
   const [view, setView] = useState("units");
   return (
-    <Box>
+    <Box m="1.5rem 2.5rem">
       <Header
         title="OVERVIEW"
-        subtitle="Overview of general revenue and profits"
+        subtitle="Overview of general revenue and profit"
       />
-      <Box>
-        <FormControl sx={{ mt: 1 }}>
+      <Box height="75vh">
+        <FormControl sx={{ mt: "1rem" }}>
           <InputLabel>View</InputLabel>
           <Select
             value={view}
